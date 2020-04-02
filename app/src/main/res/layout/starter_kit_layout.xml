@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".KitStarter">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/basics_of_pro_layout"
+            style="@style/starter_kit">
+
+            <ImageView
+                android:id="@+id/basics_of_pro_bg"
+                style="@style/starter_kit_background"
+                android:contentDescription="@string/basics_of_programming"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/intro_to_programming" />
+
+            <TextView
+                android:id="@+id/basics_of_pro_header"
+                style="@style/starter_kit_header"
+                android:text="@string/basics_of_programming"
+                app:layout_constraintBottom_toBottomOf="@+id/basics_of_pro_bg"
+                app:layout_constraintEnd_toEndOf="@+id/basics_of_pro_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/basics_of_pro_bg"
+                app:layout_constraintVertical_bias="0.3" />
+
+            <TextView
+                android:id="@+id/basics_of_pro_title"
+                style="@style/starter_kit_title"
+                android:layout_marginBottom="8dp"
+                android:text="@string/basics_of_programming_title"
+                app:layout_constraintBottom_toBottomOf="@+id/basics_of_pro_bg"
+                app:layout_constraintEnd_toEndOf="@+id/basics_of_pro_bg"
+                app:layout_constraintStart_toStartOf="@+id/basics_of_pro_bg"
+                app:layout_constraintTop_toBottomOf="@+id/basics_of_pro_header"
+                app:layout_constraintVertical_bias="0.100000024" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/basics_of_c_layout"
+            style="@style/starter_kit">
+
+            <ImageView
+                android:id="@+id/basics_of_c_bg"
+                style="@style/starter_kit_background"
+                android:background="#313435"
+                android:contentDescription="@string/basics_of_c_programming"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/bg_c_programmig" />
+
+            <TextView
+                android:id="@+id/basics_of_c_header"
+                style="@style/starter_kit_header"
+                android:text="@string/basics_of_c_programming"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/basics_of_c_bg"
+                app:layout_constraintStart_toStartOf="@+id/basics_of_c_bg"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.3" />
+
+            <TextView
+                android:id="@+id/basics_of_c_title"
+                style="@style/starter_kit_title"
+                android:text="@string/basics_of_c_title"
+                app:layout_constraintBottom_toBottomOf="@+id/basics_of_c_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/basics_of_c_bg"
+                app:layout_constraintTop_toBottomOf="@+id/basics_of_c_header"
+                app:layout_constraintVertical_bias="0.100000024" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

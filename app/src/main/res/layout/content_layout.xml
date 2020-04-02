@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <include
+        layout="@layout/active_planet"
+        app:layout_constraintBottom_toTopOf="@+id/upvote_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/upvote_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/textBackground"
+        android:padding="8dp"
+        android:text="@string/upvote"
+        android:textColor="@color/colorTextUnfocused"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cp_course" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/upcoming_course"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="211dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

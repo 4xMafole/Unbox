@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "301636539260",
+    "firebase_url": "https://unbox-2c838.firebaseio.com",
+    "project_id": "unbox-2c838",
+    "storage_bucket": "unbox-2c838.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301636539260:android:80566d28aa601a93820af9",
+        "android_client_info": {
+          "package_name": "com.example.unbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301636539260-v0m1gers7353qpi4197prl42j8n3u9g5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.unbox",
+            "certificate_hash": "30c8ba22ce2b56b9a531d4e452f687b071520ca4"
+          }
+        },
+        {
+          "client_id": "301636539260-57cvn0gb178fq6v9682d14ns04ndc89l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxmSRVafew3EkkuWw6pkWyFZQ7H7R1mw8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "301636539260-57cvn0gb178fq6v9682d14ns04ndc89l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
