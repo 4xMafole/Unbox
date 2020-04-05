@@ -1,11 +1,15 @@
 package com.example.unbox;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
@@ -18,14 +22,24 @@ import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class VideoPlayer extends AppCompatActivity
 {
 
+    //variables za kuplay video
     private PlayerView playerView;
     private SimpleExoPlayer player;
     private boolean playWhenReady = true;
     private long playbackPosition = 0;
     private int currentWindow = 0;
+
+    //variables za kuhamishwa (recyclerview and data in modules)
+    private RecyclerView _recyclerView;
+    private List<Module> _moduleList = new ArrayList<>();
+    private ModuleAdapter _moduleAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,6 +49,8 @@ public class VideoPlayer extends AppCompatActivity
 
         //Get the player view from the layout.
         playerView = findViewById(R.id.video_view);
+
+        initRecycledData();
     }
 
     //Creating an exoplayer
@@ -131,5 +147,60 @@ public class VideoPlayer extends AppCompatActivity
             player.release();
             player = null;
         }
+    }
+
+    private void initRecycledData()
+    {
+        _recyclerView = findViewById(R.id.recyclerview);
+
+        _moduleAdapter = new ModuleAdapter(_moduleList);
+
+        RecyclerView.LayoutManager _layoutManager = new LinearLayoutManager(getApplicationContext());
+
+        _recyclerView.setLayoutManager(_layoutManager);
+        _recyclerView.setItemAnimator(new DefaultItemAnimator());
+        _recyclerView.setAdapter(_moduleAdapter);
+
+        _recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), _recyclerView, new RecyclerTouchListener.ClickListener()
+        {
+            @Override
+            public void onClick(View view, int position)
+            {
+                //here you will set video urls which will will update the videos on the list. God bless these moves.
+                Module _module = _moduleList.get(position);
+                Toast.makeText(VideoPlayer.this, _module.getModule() + " is selected!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLongClick(View view, int position)
+            {
+
+            }
+        }));
+
+        prepareModuleData();
+    }
+
+    private void prepareModuleData()
+    {
+        Module _module = new Module("Overview", "02:49");
+        _moduleList.add(_module);
+
+        _module = new Module("Storage/Warehouse", "03:23");
+        _moduleList.add(_module);
+        _module = new Module("Repetition", "02:03");
+        _moduleList.add(_module);
+        _module = new Module("Decision Making", "02:59");
+        _moduleList.add(_module);
+        _module = new Module("List Creation", "05:45");
+        _moduleList.add(_module);
+        _module = new Module("Grouping Instructions", "04:40");
+        _moduleList.add(_module);
+        _module = new Module("Mistakes Avoidance", "03:32");
+        _moduleList.add(_module);
+        _module = new Module("Computer Language usage", "03:40");
+        _moduleList.add(_module);
+
+        _moduleAdapter.notifyDataSetChanged();
     }
 }

@@ -24,6 +24,7 @@ public class KitStarter extends AppCompatActivity
             {
                 Intent intent = new Intent(getBaseContext(), VideoPlayer.class);
                 startActivity(intent);
+
             }
         });
     }
